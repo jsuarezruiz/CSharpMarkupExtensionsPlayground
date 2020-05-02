@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CSharpMarkupPlayground.Views.LoginXamlView"
+    BackgroundColor="LightGray"
+    Visual="Material">
+    <ContentPage.Content>
+        <Grid
+            Padding="12">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Image
+                Grid.Row="0"
+                BackgroundColor="Gray"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="100"
+                WidthRequest="100"/>
+            <Entry
+                Grid.Row="1"
+                Text="{Binding Username, Mode=TwoWay}"
+                Placeholder="Username"/>
+            <Entry
+                Grid.Row="2"
+                Text="{Binding Password, Mode=TwoWay}"
+                IsPassword="True"
+                Placeholder="Password"/>
+            <Label
+                Grid.Row="3"
+                Text="Forgot Password?"
+                FontSize="Micro"
+                TextDecorations="Underline"
+                HorizontalOptions="End"/>
+            <Grid
+                Grid.Row="4">
+                <Button
+                    BackgroundColor="White"
+                    CornerRadius="24"
+                    Text="LOGIN"
+                    HeightRequest="60"
+                    VerticalOptions="Center"
+                    Command="{Binding SignInCommand}"
+                    Margin="24, 12"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
